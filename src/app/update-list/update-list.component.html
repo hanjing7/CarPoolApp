@@ -1,0 +1,24 @@
+<p>Query Notes Array with 2 where condition applied</p> 
+<!-- <p *ngFor="let n of notes | async">{{ n | json }}</p>  -->
+<p>{{ notes | async | json }}</p>
+<input type="text" [(ngModel)]="newDesc">
+<button (click)="updateDesc()">Update</button>
+
+<input type="text" [(ngModel)]="valDesc">
+<button (click)="addDesc(valDesc.value)">Add</button>
+<p>{{valDesc}}</p>
+
+<p>display item by object fields</p>
+<div *ngFor="let item of items | async">
+    <span>{{item.desc}}</span> |
+</div>
+------------------------------------
+<input type="text" [(ngModel)]="desc">
+<input type="text" [(ngModel)]="rating">
+<button (click)="add()">Add 2 fields</button>
+
+<div *ngFor="let m of msgsobs | async">
+    <span>{{m.desc}}</span> |<span>{{m.rating}}</span> 
+    <button (click)="update">Update</button>
+    <button (click)="delete">Delete</button>
+</div>
